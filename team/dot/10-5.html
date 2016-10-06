@@ -23,8 +23,37 @@
     <h1>
         Notes for October 5th
     </h1>
+	<h3>Network Application Architectures</h3>
     <ul>
-      <li>Notes, eventually</li>
+	    <li><b>Application architecture</b></li>
+	    <ul>
+		    <li>Designed by appication developer</li>
+		    <li>Dictates how application is structured over various end systems</li>
+		    <li>Usually draws on either client-server or peer-to-peer</li>
+	    </ul>
+	    <li><b>Client-server architecture</b></li>
+	    <ul>
+		    <li>Always-on host (<b>server</b>) fields requests from many other hosts (<b>clients</b>)</li>
+		    <li>Web server recieves request from client host, responds with the requested object</li>
+		    <li>Clients do not directly communicate with each other</li>
+		    <li>Server has a fixed, well-known <b>IP address</b></li>
+		    <li>EX: World Wide Web, FTP, Telnet, e-mail</li>
+		    <li>If a single host server is insufficient, maby connected servers can be used as a <b>data center</b></li>
+		    <li>Service providers must pay recurring interconnection and bandwith costs for sending data from data centers</li>
+	    </ul>
+	    <li><b>Peer-to-Peer</b> (<b>P2P</b>) architecture</li>
+	    <ul>
+		    <li>Minimal to no reliance on dedicated servers</li>
+		    <li>Direct communication between pairs of intermittently connected hosts, <b>peers</b></li>
+		    <li>Peers are not owned by service provider, but the users</li>
+		    <li>Ex: BitTorrent, Xunlei, Skype, Kankan, PPstream</li>
+		    <li><b>Self-scaling</b>: each peer adds both workload and capacity</li>
+		    <li>Cost effective: don't require significant server infrastructure or bandwith</li>
+		    <li>Not ISP friendly: residential ISPs are made for more downstream than upstream traffic, and P2P adds heavy upstream usage</li>
+		    <li>Difficult to secure by nature</li>
+		    <li>Require an incentive for users to volunteer their resources to the network</li>
+	    </ul>
+	    
     </ul>
 </body>
 </html>
