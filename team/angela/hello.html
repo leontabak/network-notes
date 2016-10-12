@@ -5,7 +5,7 @@
     Hello
 </title>
 </head>
-<body>
+<body><body bgcolor="#1e8449">
     <h1>
         Angela Aley
     </h1>
@@ -17,7 +17,7 @@
 </body>
 <body>
 	<h1>
-        Networks Under Attack
+        (Oct 4)Networks Under Attack
     	</h1>
 	<ul> 
    		<li>Malware: stuff that can infect our devices</li>
@@ -36,4 +36,109 @@
 		<li>IP spoofing: false source addressing to pretend to be a nice source </li>
 	</ul>
 </body>
+<body>
+	<h1>
+         <b>(Oct 5)Network Application--Transport Services Available to Applications</b>
+    	</h1>
+	<ul> 
+   	<li>Reliable Data Transfer: a protocal provides a guaranteed data delivery service meaning it is delivered correctly and completely to the other end of the application.</li>
+	<li>Loss-Tolerant Application: self-explanitory really but they are mostly multimedia applications audio/video because losses may result in small glichs but not crucialy impaire</li>
+	<li>Bandwith-Sensitive Applications: Applications that have throughput
+requirements  </li>
+	<li>Elastic Applications: can make use of as much, or as little, throughput 
+as happens to be available</li>
+	<li>Timing: transport protocol can provide timing guarantees. This has great variance. It appeals to real time applications. </li>
+	<li>Security: transport protocol can provide application with one or more security services. Including data integrity and endpoint authentication. </li>
+	</ul>
+</body>
+<body>
+	<h1>
+         <b>(Oct 6)Network Application--DNS or Dommane Name Systems</b>
+    	</h1>
+	<ul> 
+   	<li>Directory of the Internet</li>
+	<li>send requests of either a URL or a IP Address and it will give you the opposite.</li>
+	<li>sent with UDP</li>
+	<li>Root DNS: severs the interent has 13 across the globe but many little ones all over the place</li>
+	<li> Top level domain servers only handle the important domains such as .com, .org and other main .____ domains.</li>
+<li>Authoritative DNS servers:  Every organization with publicly accessible hosts on the Internet must provide publicly accessible DNS records that map the names of those hosts to IP addresses
+</li>
+	<li> main issues</li>
+<ul>
+<li>Traffic volume: is prone to DoSS attacks</li>
+<li>opportunity for single point failure (if system only has one): if this goes down no one can connect to anything </li>
+<li>distance centralized database: another reason to have lots around the place because then it is closer to each client.</li>
+</ul>
+	<li> Can be made both <b> recursive queries and iterative queries </b> </li>
+<li> DNS caching: vitally important in terms of speed, keeps a record of the main queries so that it is faster to get to them</li>
+	</ul>
+</body>
+<body>
+	<h1>
+         <b>(Oct 7)Network Application--Peer to Peer Applications</b>
+    	</h1>
+	<h2>Bit Torrent</h2>
+	<ul> 
+   	<li>popular way for file distrubution </li>
+	<li> torrent: the collection of all peers participationg in the distribution of a particlar file</li>
+	<li>Peers download equal sized <i>chunks</i> of the file from one another(typically 256 KBytes)</li>
+	<li>chunks accumulate over time and while peers download chunks they also upload other chunks to other users </li>
+	<li>once a user has got all there parts they can selfishly leave the torrent or they can altruistically stay and continue to upload chunks to other users</li>
+<li>the center of each torrent is a <i>tracker</i> each peer has to register with the tracker and keep telling it they are still appart. the tracker gives each user a subset of peers that they will be trading with</li>
+	<li>any number of people can be apart of any torrent from 10 to thousands</li>
+<li>each peer uses the TCP connection to ask each other for both for a list of what they have and then specific ones to send to them.</li>
+<li><b>rarest first</b>:is how the peers usually ask for chunks from the lists they get back from the each neighbor. </li>
+<li>there is a great visual on page 150</li>
+	<li>BitTorrent chooses to give priority to the neighbors that are currently supplying data at the highest rate</li>
+<li> an <b>unchoked</b>: is four neighbors that are quicky sending the most information and it is going both ways with the information.</li>
+<li> an <b>optimistically unchoked</b> person: is chosen every 30 seconds and for a peer in hopes that you will become one of the top 4 for them and they start sending you information.</li>
+<li> an <b>unchoked</b>: is four neighbors that are quicky sending the most information and it is going both ways with the information.</li>
+
+</body>
+<body>
+	<h1>
+         <b>(Oct 10) Transport Layer pages 186-189</b>
+    	</h1>
+	<h2>3.1 Introduction and Transport-Layer Services</h2>
+	<ul> 
+<li>Transport-Layer is about providing <b>logical communication</b> between two hosts. The application's perspective the host should seem to be directly connected to them. basically this layer sends mesages with out the two worrying about physical infastucture involoved.</li>
+<li><b>Implemented on the end servers but not in the network routers.</b> the sending side transport layer converts the application-layer messages into <b>segments</b>. that can be done by breaking up the applications messages in to smaller chunks then adding the transport layer header to each of the chunks. the receving end network layer extracts the data and sends it up to the transport layer then it is processed and made available to the receiving  application. more than one protcol can be avaibable to any given application</li>
+<h3>3.1.1 Relationship Between transport and Network Layers</h3>
+<li>as opposed to transport layer which is a logical communication between <i>processes</i> running on different hosts the <i>Network</i>-layer protocal provides logical communication between <i>hosts</i>. subtle but important</li>
+<li>the difference is like the postal service is the network layer and yet the people who pick up their mail at the end of the line and seporate it based on who lives there whould be transport layer with the mail being the application messages and end people being the processes </li>
+<li>note that Tansport layer does it all on the ends where as the network layer move the messages throughout the networks</li>
+<li>the level of service that the transport layer is directly dependent on the network layer. servies of the transport layer then cannot really give a max time. </li>
+<li>transport prrotocal can give reliable data transfer serives and can encrypt to make sure not read by intruders. </li>
+<ul> 
+
+</body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
