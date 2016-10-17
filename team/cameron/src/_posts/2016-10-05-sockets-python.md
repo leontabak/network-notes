@@ -8,7 +8,7 @@ Here's an example of a simple server in Python that prints what it recieves,
 and sends back the same data uppercased.
 
 ``` python
-import SocketServer as socketserver
+import socketserver
     
 class MyTCPHandler(socketserver.StreamRequestHandler):
     """
@@ -43,8 +43,8 @@ if __name__ == "__main__":
     server.serve_forever()
 ```
 
-This is written for Python 2, there is a tiny modification you can make to run 
-on Python 3.
+Note that this uses utilities supplied by Python 3, the `socketserver` package,
+which did not exist in Python 2.
 
 Also, it uses the `ForkingMixIn`, which creates a new process for each request,
 for greater availability.
