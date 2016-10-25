@@ -193,7 +193,7 @@
 
   \begin{enumerate}
     \item There are 32 bits in an IPv4 addes, 4 bytes (8 bits) 4 times.
-    \item 2^32 possible addresses (4,294,967,296)
+    \item $2^{32}$ possible addresses (4,294,967,296)
     \item 45.40.136.115
     \item 2D.28.88.73
     \item 00101101.00101000.10001000.01110011
@@ -228,9 +228,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item Current earth population: 7.125 billion.  This is approx 2^33 (8.589 billion).
-    \item 2^128 = 2^10...2^10(12 times) =~= 10^3...10^3(12 times) = 10^(36)
-    \item 4.7758929e+28 (a lot). (or 5x10^28 according to \href{http://itknowledgeexchange.techtarget.com/whatis/ipv6-addresses-how-many-is-that-in-numbers/}{This site}
+    \item Current earth population: 7.125 billion.  This is approx $2^{33}$ (8.589 billion).
+    \item $2^{128} = 2^{10}$...$2^{10}$(12 times) =~= $10^{3}$...$10^{3}$(12 times) = $10^{36}$
+    \item 4.7758929e+28 (a lot). (or $5*10^{28}$ according to \href{http://itknowledgeexchange.techtarget.com/whatis/ipv6-addresses-how-many-is-that-in-numbers/}{Site}
     \end{enumerate}
 
     \end{answer}
@@ -260,7 +260,7 @@
     addressing when a programmer specifies a port number?
 
   \begin{answer}
-    A port is an endpoint of communication, specific port numbers generally identify specific services such as webservers, Telnet, DNS, etc.  
+    A port is an endpoint of communication, specific port numbers generally identify specific services such as webservers, Telnet, DNS, etc.  It is supposed to address processes.
     \end{answer}
 
   \item Here is an address: d4:9a:20:0a:49:00
@@ -293,9 +293,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Port
+    \item IP address
+    \item MAC address
     \end{enumerate}
 
     \end{answer}
@@ -322,10 +322,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Dynamic Host Configuration Protocol provides an Internet Protocol host with it's IP address and other information such as the subnet mask and default gateway of it's local network.  Also may give address for DNS servers and DNS domain name.  
+    \item Especially useful when connecting a computer to a network for the first time and you don't want to manually create an IP address.
+    \item Network protocol used on IP networks.  It is part of the application layer.  It is implemented with two UDP port numbers; UDP port number 67 is the destination port of a server, and UDP port number 68 is used by the client.
+    \item Because the client does not yet have an IP address, thus there is no way to directly send a message to it.
     \end{enumerate}
 
     \end{answer}
@@ -335,10 +335,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Port numbers are meant to be used for addressing processes, not addressing hosts
+    \item Routers are supposed to process packets only up to layer 3
+    \item NAT protocol violates the end-to-end argument
+    \item We should use IPv6 to solve the shortage of IP addresses
     \end{enumerate}
 
     \end{answer}
@@ -352,8 +352,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item DNS translates between Host Name and IP addresses. (or vice versa)
+    \item Hardware address (MAC address) and Network layer address (IP address).
     \end{enumerate}
 
     \end{answer}
@@ -369,8 +369,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Data link/link layer
+    \item Transport layer (TCP and IP)
     \end{enumerate}
 
     \end{answer}
@@ -387,8 +387,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item The number is the 'cost' to get to the node
+    \item The label is the node from which the cost to get at the current node is from (ie. if it is E then the cost is from E to the current node)
     \end{enumerate}
 
     \end{answer}
@@ -412,7 +412,7 @@
   \begin{answer}
 
   \begin{align*}
-    \parbox{4cm}{LHS HERE} & = \parbox{4cm}{RHS HERE}
+    d_x(y) = (\min)_v\{c(x,v)+d_v(y)\}
     \end{align*}
 
     \end{answer}
@@ -428,10 +428,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Iterative
+    \item Asynchronous
+    \item Distributed
+    \item Self-terminating
     \end{enumerate}
 
     \end{answer}
@@ -449,9 +449,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE 
-    \item WRITE YOUR ANSWER HERE 
-    \item WRITE YOUR ANSWER HERE 
+    \item Communicating between two ASs, ability to obtain reachability nformation from neighboring ASs and propagating the reachability information to all routers internal to the AS 
+    \item Inter-AS as there are tons of routers in the internet, especially between the ASs**
+    \item Intra-AS**
     \end{enumerate}
 
     \end{answer}
@@ -496,8 +496,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item That collum 3 and row 3 are incorrectly labled.  This is because the pairty bit for collum 3 is 1, but there are no 1s; and the parity bit for row 3 is 0, but there is one 1.
+    \item Since the receiver knows that bit misplaced must be in both row 3 and collum 3 then it can change the 0 to a 1.
     \end{enumerate}
 
     \end{answer}
@@ -549,8 +549,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Decrease
+    \item Increase
     \end{enumerate}
 
     \end{answer}
@@ -584,11 +584,11 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Routers
+    \item Switch
+    \item Switch (faster speed, in LAN) Router (faster decisions, faster in MAN/WAN)
+    \item Switch (connects two or more nodes) (While Routers connect two or more networks)
+    \item Switch
     \end{enumerate}
 
     \end{answer}
@@ -640,9 +640,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Uses XOR (exclusive Or) subtraction.  If it is ever two different bits the number is 1, but if it is two same bits the number is 0.
+    \item D value (piece of data) 1010101010, additional R bits so that it is exactly divisible by the G (generator)
+    \item Recieve divides the D+R by G and if it is a non-zero answer there are errors.  Thus it can detect burst errors of fewer than r+1 bits, and even so a burst error with r+1 bits is detected with probability of $1 - 0.5^{r}$.  Also it can detect any odd number of bit errors.
     \end{enumerate}
 
     \end{answer}
