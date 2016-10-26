@@ -89,8 +89,12 @@
 
   \begin{enumerate}
     \item p=0.00794119224839296
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item When more bandwith is requested than can be provided, a bottleneck occurs, 
+    	and the queueing delay for packets increases, possibly to the point where the 
+	queue is filled and packets begin to be dropped.
+    \item Given the rather low probablility of more subscribers being active simultaneously 
+    	than the system can handle, packet switch communications in this example can
+	provide each subscriber as much bandwith as they need most of the time.
     \end{enumerate}
 
     \end{answer}
@@ -251,7 +255,8 @@
     addressing when a programmer specifies a port number?
 
   \begin{answer}
-    WRITE YOUR ANSWER HERE
+    A port number defines which network application a segment is being delivered to, as an 
+    added layer of specificity over the IP address.
     \end{answer}
 
   \item Here is an address: d4:9a:20:0a:49:00
@@ -266,7 +271,8 @@
 
   \begin{enumerate}
     \item This address is formatted as a MAC address.
-    \item WRITE YOUR ANSWER HERE
+    \item A MAC address is a link-layer address which uniquely identifies a link-layer 
+    	adapter.
     \item 48 bits are needed for a 12 digit hexadecimal number.
     \end{enumerate}
 
@@ -284,9 +290,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item IP Address
+    \item Port Number
+    \item MAC Address
     \end{enumerate}
 
     \end{answer}
@@ -313,10 +319,17 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item DHCP assigns an IP address to a host and provides its subnet mask, the address 
+    	of the first router packets will visit upon leaving the host, and the address of 
+	the local DNS server.
+    \item DHCP is particularly useful for networks where users are constantly connecting and 
+    	disconnecting and do not need to keep the same IP address for an extended period 
+	of time.
+    \item DHCP discovery messages are sent by UDP to port 67.
+    \item The server broadcasts the offer message because it is possible for the request to 
+    	reach and be returned by multiple DHCP servers. Because a client is not guaranteed 
+	to choose that particular DHCP server, it waits to open the connection and send an 
+	ACK until after the offer message gets a response.
     \end{enumerate}
 
     \end{answer}
@@ -326,10 +339,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Port numbers are meant to address processes, not hosts.
+    \item Routers are only supposed to process packets up to layer 3.
+    \item NAT violates the idea that hosts should talk directly to each other.
+    \item If we switched to IPv6, NAT would be unnecessary.
     \end{enumerate}
 
     \end{answer}
@@ -343,9 +356,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item DNS translates between computer-readable IP addresses and human-readable
-	hostnames.
-    \item WRITE YOUR ANSWER HERE
+    \item DNS translates between IP addresses and hostnames.
+    \item ARP translates between IP addresses and MAC addresses.
     \end{enumerate}
 
     \end{answer}
@@ -361,8 +373,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Link Layer
+    \item Transport Layer
     \end{enumerate}
 
     \end{answer}
@@ -379,8 +391,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item The number denotes the cost of the least-cost path to reach the node
+    \item The label denotes the node which will be passed through directly 
+    	before reaching the destination node on the least-cost path from the 
+	source.
     \end{enumerate}
 
     \end{answer}
@@ -404,7 +418,7 @@
   \begin{answer}
 
   \begin{align*}
-    \parbox{4cm}{LHS HERE} & = \parbox{4cm}{RHS HERE}
+    \parbox{4cm}{$d_x(y)$} & = \parbox{4cm}{${\min}_v$\{$c(x,v)$ + $d_v(y)$\}}
     \end{align*}
 
     \end{answer}
@@ -420,10 +434,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
-    \item WRITE YOUR ANSWER HERE
+    \item Iterative
+    \item Asynchronous
+    \item Distributed
+    \item Self-terminating
     \end{enumerate}
 
     \end{answer}
