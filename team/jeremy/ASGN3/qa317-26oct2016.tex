@@ -7,7 +7,7 @@
 %% typing: pdflatex qa317-24oct2016.tex
 
 \documentclass[standalone]{article} 
-%% cahnge this to make it  easier to use
+%% change this to make it  easier to use
 %% OG: \documentclass[twoside]{article}
 \title{Graded Exercise 3}
 \author{Jeremy Novak}
@@ -101,9 +101,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item The probibility that at any given momnet 21 or more subscribers will be comunicating is 0.00794 or 0.794\%.
-    \item Tranmsiion causes packet delays and packet lost. 
-    \item Packet switching networks can handle more host and allocate bandwith.
+    \item The probability that at any given moment 21 or more subscribers will be communicating is 0.00794 or 0.794\%.
+    \item Transmission causes packet delays and packet lost. 
+    \item Packet switching networks can handle more host and allocate bandwidth.
     \end{enumerate}
 
     \end{answer}
@@ -195,7 +195,7 @@
 
   \begin{enumerate}
     \item There are 32 bits in a IPv4 address.
-    \item If all the bits in an IPv4 address were used we could have $2^{32}$ adresses. 
+    \item If all the bits in an IPv4 address were used we could have $2^{32}$ addresses. 
     \item The dotted decimal address of \verb+www.eonsahead.com+ is 45.40.136.115.
     \item The hexadecimal address of \verb+www.eonsahead.com+ is 2D288873.
     \item The binary address of \verb+www.eonsahead.com+ is 00101101001010001000100001110011.
@@ -231,7 +231,7 @@
 
   \begin{enumerate}
     \item The current population of Earth is about 7.125 billion people.
-    \item $2^{128}$ is best represented in interger power of ten with $10^{38}$
+    \item $2^{128}$ is best represented in integer power of ten with $10^{38}$
     \item Each person on earth could have about $4.7*10^{28}$ IPv6 addresses.
     \end{enumerate}
 
@@ -276,7 +276,7 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item The address format is a hexidecimal MAC address. 
+    \item The address format is a hexadecimal MAC address. 
     \item The hardware/physical address of a computer. 
     \item Mac addresses need 6-bytes or 48-bits. 
     \end{enumerate}
@@ -295,7 +295,7 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item The Transport layer segement headers include the port number. 
+    \item The Transport layer segment headers include the port number. 
     \item The Network layer datagrams headers include the IP addresses. 
     \item The Link layer Ethernet frames headers include MAC addresses. 
     \end{enumerate}
@@ -324,11 +324,11 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item The main service that DHCP provides clients with a vaild IP address, subnet mask and default gateway. 
+    \item The main service that DHCP provides clients with a valid IP address, subnet mask and default gateway. 
     \item DHCP is especially useful in networks where hosts come and go.
     \item DHCP clients use UDP port number 67 to find servers, and port 68 to find clients. 
     \item The \emph{offer message} is sent to the client so that the client knows which IP address it has been given. 
-	The client knows that the IP address is intened for them because the \emph{offer message} includes the client's MAC address. 
+	The client knows that the IP address is intended for them because the \emph{offer message} includes the client's MAC address. 
     \end{enumerate}
 
     \end{answer}
@@ -336,12 +336,12 @@
   \item What are several possible objections to the use of NAT?
 
   \begin{answer}
-%look in book
+
   \begin{enumerate}
-    \item NATs can't be used if there are a large number of hosts that are not controlled by the same person
-    \item Making applications that work with NATs are more complicated
-    \item NATs do not work with devices that don't support IPv4.
-    \item New security standards may reject the cahnges that NATs make to the headers of packets.
+    \item NATs use ports in ways other than their intended use of addressing process.
+    \item Routers are only supposed to process packets up to layer 3 
+    \item NATs violate end-to-end arguments.
+    \item NATs and IPv6 are different ways to solve the IP address shortage and many people suggest using IPv6 rather than NATs.
     \end{enumerate}
 
     \end{answer}
@@ -393,8 +393,8 @@
     \item The number represents the distance between the that node and the
 node at the start of the spanning tree.
     \item The label denotes the node one "step" closer to node at the start of
-the spanning tre. These lables can be used to traces the tree back to
-it’s start from th eend, by following each node down the tree.
+the spanning tree. These labels can be used to traces the tree back to
+it’s start from the end, by following each node down the tree.
     \end{enumerate}
 
     \end{answer}
@@ -433,7 +433,6 @@ it’s start from th eend, by following each node down the tree.
 
   \begin{answer}
 
-%Check answers plz
   \begin{enumerate}
     \item iterative
     \item asynchronous
@@ -454,7 +453,7 @@ it’s start from th eend, by following each node down the tree.
     \end{enumerate}
 
   \begin{answer}
-%Check answers plz
+
   \begin{enumerate}
     \item Inter-AS routing is used to connect networks together. 
     \item Scalability is more important for inter-AS routing.
@@ -503,7 +502,7 @@ it’s start from th eend, by following each node down the tree.
   \begin{answer}
 
   \begin{enumerate}
-    \item The receiver knows that a error has occured in the messgae.
+    \item The receiver knows that a error has occurred in the message.
     \item The receiver can fix the error by looking at the bit that is in both the row and column that have the wrong parity bit, and change that bit to correct the error.
     \end{enumerate}
 
@@ -562,14 +561,14 @@ it’s start from th eend, by following each node down the tree.
 
     \end{answer}
 
-  \item Both routers and switchs store and forward packets.
+  \item Both routers and switches store and forward packets.
     Routers execute layer 3 protocols. In layer 3, IP addresses determine
     where packets go.
     Switches execute layer 2 protocols. In layer 2, MAC addresses determine
     where packets go.
     Even so, network administrators can often choose to connect two networks
     using a router instead of a switch (or vice versa). 
-    Network adminstrators need to know the advantages and disadvantages of
+    Network administrators need to know the advantages and disadvantages of
     each kind of device.
 
   \begin{enumerate}
@@ -584,7 +583,7 @@ it’s start from th eend, by following each node down the tree.
       A greater variety of topologies means freedom from the constraint of avoiding multiple links
       between elements in a network. The network need not be a spanning tree, but can be a more
       general kind of graph.
-    \item Susceptibilty to broadcast storms (an unattractive characteristic) is a property
+    \item Susceptibility to broadcast storms (an unattractive characteristic) is a property
       of which kind of device: router or switch?
     \end{enumerate}
 
@@ -592,7 +591,7 @@ it’s start from th eend, by following each node down the tree.
 
   \begin{enumerate}
     \item Hierarchical addressing is used in routers.
-    \item ''Plug-and-play'' is used in switchs
+    \item ''Plug-and-play'' is used in switches
     \item A router is faster at processing switch.
     \item A router has  greater variety of topologies.
     \item A switch is susceptible to broadcast storms.
@@ -648,7 +647,7 @@ it’s start from th eend, by following each node down the tree.
 
   \begin{enumerate}
     \item This method of long division replaces subtraction with exclusive OR, XOR.
-    \item The sender will send both the Data D, and the CRC remander (R), so that this division operation can be done. 
+    \item The sender will send both the Data D, and the CRC remainder (R), so that this division operation can be done. 
     \item CRC can detect burst errors that are less than the generator's length long.
     \end{enumerate}
 
