@@ -1,0 +1,69 @@
+Monday October 24th
+Wireless Links
+
+    If we were to take a wired network and replace it with a wireless one, we'd have to make some minor changes to the link
+layer, but no changes would be needed at the network layer (or any layer above that one). This is, of course, the entire point
+of the layered design. Layers don't care how the other layers get their results, they only care that they get them so that
+they can get do their own job and pass it on to the next layer.
+
+    Important differences between a wired link, and a wireless link...
+  1. Decreased Signal Strength: As most of us have almost certainly experienced (seriously, just try walking outside and
+        browsing on Cornell's wifi.) wireless links have some signal strength issues. Because wireless links use
+        electromagnetic radiation, the signal will naturally get worse as it passes through solid objects. Particularly walls.
+        But, even in free space, the signals going to disperse in the air, and the farther you get from the sender, the worse
+        its going to get. This is also known as Path Loss.
+  
+  2. Interference From Other Sources: Much like radiowaves running on the same frequency, wireless network devices running on
+        the same frequency will have some interference issues. Not only that, but other objects that you might not expect can
+        cause electromagnetic noise can cause interference to. This includes things like motors, or microwaves.
+        
+  3. Multipath Propagation: This occurs when portions of the electromagnetic wave reflect off things in the environment, or
+        even the ground. This causes the signal to take different paths (and most likely of different lengths) when traveling
+        between the sender and receiver. As such, the signal can become 'blurred'.
+        
+    So basically, a wired connection is almost always faster then a wireless one. Go buy lan adapters for your online gaming
+needs, kids.
+
+    The Signal to Noise ratio is a measure of the strength of a received wireless signal versus the 'noise' in the environment.
+This ratio is measured in decibels. A larger ratio means a better signal. A better signal means a lower Bit Error Rate, that is,
+the probability that any given trasmitted bit is an error when received. You can somewhat increase your signal to noise ratio
+by increasing your transmission power, but it suffers from diminishing returns. There is only so much good that will do, and 
+it can take a massive tole on the amount of energy used (cell phones drain faster, etc) and it interferes with everyone elses
+signal. So yeah, that can prove to be a problem.
+
+
+
+
+
+Tuesday October 25th
+Block Ciphers
+
+    There are two classes of symmetric encryption techniques used today. Stream Ciphers, and Block Ciphers. Stream Ciphers
+are being covered in a section we aren't covering, so I guess I'll tackle Block Ciphers for now.
+
+    In a block cipher, whatever message you wish to encrypt is cut up into blocks of 'k' bits. k being any arbitrary number.
+Once broken up, each block of bits is encrypted independently of the others, using a 'one to one' mapping. Basically what
+this means is that if you put in 'A' and get 'B', then no matter how many times you put in 'A' you will always receive 'B'.
+The purpose of this is pretty obvious, you wouldn't want to put in  'A' and get different results. That would cause a lot of
+problems when going back to plain text form cipher text. Though, I suppose you could actually get two different 'B' results,
+so long as both 'B' results would translate back to 'A' and not into anything else. So long as both translate back into the
+same thing with no overlap of results (for instance, inputting 'A', getting 'B', but then translating back as 'C' or 'A').
+
+    Anyways, this system can be incredibly hard to crack. while a k value of 3 only gives 45 thousand or so possibilities
+(which, while nearly impossible in any reasonable amount of time for a person to check all of, is childs play for a modern
+computer), a k value of 64 gives an absolutely LUDICROUS amount of possibilities. Extremely difficult, if not impossible,
+for even modern computers.
+
+    Of course, with so many possibilities, itd be a herculean task to actually keep all of those possible 64-bit inputs in
+a table for retranslation later. There would be, after all, 2^64 possible inputs. Then if you have to change that key for
+whatever arbitrary reason, you'd have to do the whole thing over again. It's just not feasible. Thankfully, using various
+functions, we can simulate randomness and permutate the tables using that function. This is done by the function by taking
+the large input, and breaking it down into more manageable sized chuncks (say, for k=64, into chunks of 8). These chunks are
+then processed into chunkxchunk sized tables, and then reassembled into the k-sized input. Then, using a scrambling function
+that both parties know, the entire 64 bit input is scrambled around and once again cut into chunks. This process repeats
+until satisfied. So long as the scrambling function is known by both intended parties, it can be reversed and the original
+message received.
+
+    Some of todays most popular block ciphers are DES, 3DES, and AES. AES is especially impressive (and impervious), using
+128-bit blocks. Using modern technology, it would take 149 trillion years to break an AES encryption. Thats... kindof amazing
+really.
