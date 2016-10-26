@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<body style="background-color:#E52826;">
+		<text style="color:#00EADC;">
+		<style>
+		body{ cursor: url('alsobestcursor.cur'), auto;}
+		</style>
+		<title>
+			October 26th
+		</title>
+	</head>
+	<body>
+		<h1>October 26th Notes</h1>
+		<h2>Lecture/Lab</h2>
+			<ul>
+				<li>Video of guy and daughters speaking different languages.  Polygot family.</li>
+				<li>Guy ran from San Fransico to New York, 3,067 miles, 72 miles a day in 6 weeks with one day of rest.  From city hall steps to city hall steps.  Limits of human preformance.</li>
+			</ul>
+			<h3>Paul: SocketStress demonstation</h3>
+				<ul>
+					<li>Use Python scapy</li>
+					<li>Chooses a random port for source</li>
+					<li>Destination port and IP are specified</li>
+					<li>Sends packet, if it gets a response, then sends a reply with a flag of A (for ACK) and a window of 0</li>
+					<li>When it times out the counter incriments</li>
+					<li>Specifies x number of threads (50) and has  them run</li>
+					<li>iptables, makes it drop legit ACK packets</li>
+					<li>If you ever get into python, check out scapy, good for packet sniffing</li>
+					<li>Modify packets on the fly, need sudo permission</li>
+					<li>Can effect routers/nodes in the network inbetween</li>
+					<li>Need to specify ip address of target (webserver or computer), and the port they run on</li>
+					<li>Use a port scanner (nmap) to find port of target.  Also ARP for MAC addresses, ect.</li>
+					<li>Have to use a full SYN request, so it knows your MAC address, etc.</li>
+					<li>Can use wireshark to view packets as they pass through</li>
+					<li>Uses up memory till it crashes</li>
+					<li><u>Couldn't stop it, lol</u></li>
+				</ul>
+		<div style="text-align:left">
+			<a href="">Previous</a>
+		</div>
+		<div style="text-align:center">
+			<a href="hello.html"> Home </a>
+		</div>
+		<div style="text-align:right">
+			<a href="">Next</a>
+		</div>
+	</body>
+</html>
