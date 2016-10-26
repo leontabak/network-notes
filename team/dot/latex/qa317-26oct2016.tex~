@@ -651,11 +651,8 @@
   \begin{enumerate}
     \item The subtraction has no borrows or carrys, and uses XOR instead of traditional 
 	math operators.
-    \item The sender transmits a number which is exactly divisible by a pre-determined 
-	generator.
-    \item The receiver can detect all burst errors up to the length of the 
-	generator string, as well as most longer burst errors. In addition, any 
-	odd number of errors can be detected no matter how many there are.
+    \item WRITE YOUR ANSWER HERE
+    \item WRITE YOUR ANSWER HERE
     \end{enumerate}
 
     \end{answer}
