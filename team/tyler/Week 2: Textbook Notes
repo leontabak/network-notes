@@ -1,1 +1,15 @@
+Wednesday October 19th
+Cyclic Redundancy Checks
 
+    For today, I'm going to do something just a wee bit different. I found that the books explanation of CRC calculation pretty
+confusing, so instead, I'm going to briefly go over how its calculated, in laymans terms.
+
+    To begin, we are given two strings of binary of various length, G and D, and are further given a value for the length of r. Our goal
+is to find 'r' through this CRC calculation so that we can determine exactly what bits were transmitted. So, to set-up the 
+problem, we draw the Division Bracket (the symbol you use when you do long hand division like some kind of caveman. [I jest,
+but I seriously don't think I've done long hand division since sixth grade...]) On the left side of the division bracket,
+write 'G', each of its bits. Inside the division bracket, write each bit of 'D' out. Then, in addition, add a number of zeroes
+to the end of 'D''s string equal to the length of 'r'.
+
+    Now that were' set up, lets get into the nitty gritty. Begin by writing 'G' below 'D', lining up the bits starting from the
+left hand side of 'D'
