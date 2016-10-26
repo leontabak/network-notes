@@ -1,3 +1,42 @@
+Monday, October 17th
+Routing Algorithms
+
+    The network layer is responsible for determining the best path from the sender to the receiver. It accomlishes this by
+using one of two major routing algorithms, determining the best path through the series of routers.
+    
+    Each host is normally attached directly to a single router, it's 'default router' or 'first-hop router'. Every time the
+host sends or receives a packet, it goes through its default router. The default router of the sender is known as the
+'source router' and the default router of the receiver is called the 'destination router'. So, it stands to reason that we
+determine the 'best path' by finding the fastest path from the source router to the destination router.
+
+    To help determine the best path, router networks are shown as a 'graph'. In this graph, each router is represented by a
+small circle (or square, or anything really) with a name. Each router has several edges that show its connections to other
+routers in the network. Each of these edges also shows a numerical value, the 'cost' of moving from one router to the other.
+These edges represent the physical links between each router. The 'cost' in this instance could be anything from the actual
+cost of building or using such connections, but in general just speaks to the amount of time it takes to travel from one to
+the other by that route. In the real world, many things determine a paths cost, which can make routing algorithms tricky to
+implement, but we're just talking in broad strokes here for the moment, so we won't worry about the specifics of how the cost
+comes to be the way it is, it just is.
+
+    If there exists a connection between two nodes in a network, then those nodes are said to be 'neighbors' of each other.
+The goal of a routing algorithm is to travel between 'paths', a series of neighbors connected together, to get data from the
+source router to the destination router in the most efficient way possible. This most efficient path is called the 'least
+cost path', and, as you might imagine, is the path that requires the least total cost to get from the source to the
+destination. In addition, there is something called the 'shortest path', which is the path that requires the data to enter
+the fewest number of nodes as possible before reaching its destination, regardless of the cost. However, these two terms are
+very often mixed up (I think even our textbook has made this mistake a couple times...), and so if you hear someone refer to
+the 'shortest' path, they're probably actually referring to the least cost path.
+
+    There are two types of routing algorithms. A Global routing algorithm computes the least cost path using complete
+knowledge of the network. It would be as if it had the entire graph in its memory. These are also classified as 'link-state
+algorithms'. The second type is known as a 'decentralized routing algorithm'. These algorithms don't have complete knowledge
+of the network. Instead, each node only begins with knowledge of its own connections, then through a long process of
+information exchange with its neighbors, gradually calculate the least cost path to their destination.
+
+
+
+
+
 Wednesday, October 19th
 Cyclic Redundancy Checks
 
