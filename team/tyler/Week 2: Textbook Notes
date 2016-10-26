@@ -1,4 +1,4 @@
-Wednesday October 19th
+Wednesday, October 19th
 Cyclic Redundancy Checks
 
     For today, I'm going to do something just a wee bit different. I found that the books explanation of CRC calculation pretty
@@ -12,4 +12,25 @@ write 'G', each of its bits. Inside the division bracket, write each bit of 'D' 
 to the end of 'D''s string equal to the length of 'r'.
 
     Now that were' set up, lets get into the nitty gritty. Begin by writing 'G' below 'D', lining up the bits starting from the
-left hand side of 'D'
+left hand side of 'D'. We're going to 'subtract' 'G' from 'D'. But, it's not like you'd normally subtract in your standard
+math course. Instead, beginning from the leftmost column, we're going to use 'Xor'. What that means is, if either, but not both,
+of the binary digits in this column are 1, then the result is also 1. If both are 1, or both are 0, then the result is 0. In
+other words, 'exclusive or'.
+    
+    So again, starting from the leftmost column, (draw a line below to seperate the initial columns from the Xor result.)
+determine the results of each column. If your first column would result in a '0', instead of writing a '0', write nothing
+instead. In fact, continue writing nothing instead of '0' until you get a result of '1' the first time this subtraction. The
+first digit of your result MUST be a 1, as the zeroes are simply left blank. Once that first 1 result is found though, write
+'0's as part of your result when appropriate.
+
+    After this subtraction, look back up at your initial placement of 'D'. Draw a line from the leftmost unused (as in, you
+haven't used it in a subtraction yet) bit, and bring it down and add it to your result of the previous step. Now, if there
+are enough bits in the result to fit all of 'G' under it, subtract again, using the same process as before. Otherwise, bring
+down the next digit.
+
+    You're going to repeat this process of bringing down bits, subtracting, and so on until you run out of bits from 'D' to
+ bring down. Once that happens, look at the final 'r-length' digits of your result, adding zeros to the left of it as necessary.
+ This is r! Using r, we can finally determine what bits were translated. To do so, just take your original 'D' string, and add
+ 'r' in place of the zeroes.
+ 
+ Thursday, October 20th
