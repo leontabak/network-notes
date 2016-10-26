@@ -33,7 +33,7 @@
 					</ul>
 				<li>May have large redundancy between equipment or links, for high availibility</li>
 			</ul>
-			<img src = "data-center-hierarchy.png" alt = "data center hierarchy">
+			<img src = "data-center-hierarchy.PNG" alt = "data center hierarchy">
 			<ul>
 				<li><b>Fully connected topology</b>: Replaces the hierarchy of switches and routers.</li>
 				<li>One method is to have each teir-1 switch connects to all of the teir-2 switches.  This means two things:</li>
@@ -88,7 +88,60 @@
 					<li>Now it is finished</li>
 			</ul>
 		<h2>Lecture</h2>
+			<ul>
+				<li>Came in a bit late, had a pdf open, looks like the take home quiz he was talking about for GradedExercise3.</li>
+				<li><b>Even parity</b>: Reciever counts bit if # isn't even then there is an error.  Not fool proof, two errors could go undetected.</li>
+				<li><b>CRC</b>:Cyclic Redundancy check</li>
+					<ul>
+						<li>Long division</li>
+						<li>Exclusive or (XOR) for + and -</li>
+						<li>Multiply dataword by 2<sup>4</sup>.  Shift over by n digits for 2<sup>n</sup>, fill in with 4 0s.</li>
+						<li>Move by 5 digits at a time</li>
+						<li>If # bgins with 1 write generator</li>
+						<li>If # begins with 0 write 5 0s.</li>
+						<li>Write starting diit up top.</li>
+					</ul>
+				<li><u>Nigel: Distance Vector Routing</u></li>
+				<li>Routers periodically send routing updates to all nearby nodes by broadcasting their entire routing tables</li>
+				<li>Calculations are distributed</li>
+				<li><b>Easy triangle:</b><li>
+				<li>3 routers in a triange, with their own routing table.</li>
+				<li>Routing table has a 0 for self refrence.</li>
+				<li>Equation: d<sub>x</sub>(y)=min<sub>v</sub>{C(X,V)}....INCOMPLETE</li>
+				<li>Routing tables update to include eachother and the shorest path</li>
+				<li>Couting to infinity:</li>
+				<li>Tables update recursivly and count upwards</li>
+				<li>Solution = posion reverse</li>
+				<li>Set update to infinity when it updates, instead of real value, keeps them from counting upwards</li>
+			</ul>
 		<h2>Lab</h2>
+			<h3>Paul: ARP</h3>
+			<ul>
+				<li>ARP spoofing</li>
+					<ul>
+						<li>tricks hosts on network into thinking that one host has the attacker's mac address whcih leads to router forwarding to the attacker rather than host.</li>
+						<li>Need to tell the host that you're the router, and the router that you're the host.  Then you can modify and pass information between them.  Able to read and edit packets,</li>
+						<li>New security measures.  Private key encryptions, HTTPS, etc.</li>
+						<li>Ways around such as saying that HTTPS not availible, but new methods to block such as enforced encryption.</li>
+					</ul>
+				<li>DNS spoofing</li>
+					<ul>
+						<li>Similar to ARP spoofing, pretend that you are the DNS, or corrupt the DNS database.</li>
+						<li>Can redirect traffic to a site you made rather than original site</li>
+					</ul>
+				<li>You can inject Javascript into incoming packet's HTML.  (ie. javascript alert, website redirect, etc.) Doesn't work on HTTPS.</li>
+				<li>Fishing</li>
+				<li>Heap overflow?</li>
+				<li>ARP spoof, SSL stripper, etc.  Download data, take it home,extract information.</li>
+				<li>Mask MAC address</li>
+			</ul>
+			<h3>Leon on writing</h3>
+				<ul>
+					<li>Two ways of doing math</li>
+					<li><i>$ x + 1 $</i></li>
+					<li><i>\begin{align*}</br> ...</br> \end{align*}</i></li>
+					<li>in math mode, to type ordinary english use</br> <i>\parbox{8cm}{...}</i></li>
+				</ul>
 		<div style="text-align:left">
 			<a href="">Previous</a>
 		</div>
