@@ -1,0 +1,31 @@
+Monday October 24th
+Wireless Links
+
+    If we were to take a wired network and replace it with a wireless one, we'd have to make some minor changes to the link
+layer, but no changes would be needed at the network layer (or any layer above that one). This is, of course, the entire point
+of the layered design. Layers don't care how the other layers get their results, they only care that they get them so that
+they can get do their own job and pass it on to the next layer.
+    Important differences between a wired link, and a wireless link...
+  1. Decreased Signal Strength: As most of us have almost certainly experienced (seriously, just try walking outside and
+        browsing on Cornell's wifi.) wireless links have some signal strength issues. Because wireless links use
+        electromagnetic radiation, the signal will naturally get worse as it passes through solid objects. Particularly walls.
+        But, even in free space, the signals going to disperse in the air, and the farther you get from the sender, the worse
+        its going to get. This is also known as Path Loss.
+  
+  2. Interference From Other Sources: Much like radiowaves running on the same frequency, wireless network devices running on
+        the same frequency will have some interference issues. Not only that, but other objects that you might not expect can
+        cause electromagnetic noise can cause interference to. This includes things like motors, or microwaves.
+        
+  3. Multipath Propagation: This occurs when portions of the electromagnetic wave reflect off things in the environment, or
+        even the ground. This causes the signal to take different paths (and most likely of different lengths) when traveling
+        between the sender and receiver. As such, the signal can become 'blurred'.
+        
+    So basically, a wired connection is almost always faster then a wireless one. Go buy lan adapters for your online gaming
+needs, kids.
+
+    The Signal to Noise ratio is a measure of the strength of a received wireless signal versus the 'noise' in the environment.
+This ratio is measured in decibels. A larger ratio means a better signal. A better signal means a lower Bit Error Rate, that is,
+the probability that any given trasmitted bit is an error when received. You can somewhat increase your signal to noise ratio
+by increasing your transmission power, but it suffers from diminishing returns. There is only so much good that will do, and 
+it can take a massive tole on the amount of energy used (cell phones drain faster, etc) and it interferes with everyone elses
+signal. So yeah, that can prove to be a problem.
