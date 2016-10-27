@@ -1,4 +1,3 @@
-
 %% Change the name of the author of this
 %% document from CSC317 Computer Networks to
 %% your name.
@@ -8,7 +7,7 @@
 
 \documentclass[twoside]{article}
 \title{Graded Exercise 3}
-\author{CSC317 Computer Networks}
+\author{Dot Carmichael}
 \date{26 October 2016}
 
 \usepackage{amsmath}
@@ -27,6 +26,8 @@
 \begin{enumerate}
   \item Match the people with their achievements.
 
+  \begin{answer}
+
   \begin{tabular}{l|l}
     \textbf{Person} & \textbf{Achievement} \\ \hline
     Marc Andreesen & Ethernet \\
@@ -35,18 +36,6 @@
     Len Kleinrock & TCP/IP \\
     Bob Metcalfe & Web browser \\
     Radia Perlman & World Wide Web
-    \end{tabular}
-
-  \begin{answer}
-
-  \begin{tabular}{l|l}
-    \textbf{Person} & \textbf{Achievement} \\ \hline
-    Marc Andreesen & Web browser\\
-    Tim Berners-Lee &  World Wide Web \\
-    Vint Cerf \& Bob Kahn & TCP/IP \\    
-    Len Kleinrock & packet switching, Internet's first node \\
-    Bob Metcalfe & Ethernet \\
-    Radia Perlman & routing algorithm
     \end{tabular}
 
     \end{answer}
@@ -91,7 +80,7 @@
       \item What is the probability that at any given moment
         $21$ or more subscribers will be communicating?
       \item What happens in a packet switched network when subscribers
-        request more bandwidth than the channel can provide?
+        request more bandwidth than the channel can provide.
       \item What can you infer from this result about an advantage
         of packet switched communications?
       \end{enumerate}
@@ -99,11 +88,13 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item 0.79 percent.
-    \item In networks with overly high traffic intensity, clients will experience packet loss; that is, packets arriving at the router will find a 
-	full queue, and be dropped.
-    \item In a packet switched network, a dropped packet can be simply retransmitted, 
-	forgoing the need to retransmit entire messages, or sit through an excessively long queue.
+    \item p=0.00794119224839296
+    \item When more bandwith is requested than can be provided, a bottleneck occurs, 
+    	and the queueing delay for packets increases, possibly to the point where the 
+	queue is filled and packets begin to be dropped.
+    \item Given the rather low probablility of more subscribers being active simultaneously 
+    	than the system can handle, packet switch communications in this example can
+	provide each subscriber as much bandwith as they need most of the time.
     \end{enumerate}
 
     \end{answer}
@@ -194,16 +185,17 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item 32 bits.
-    \item $2^32$, or about 4.3 billion.
-    \item 45.40.136.115
-    \item 2D.28.88.73
-    \item 00101101 00101000 10001000 01110011
+    \item There are 32 bits in an IPv4 address, divided into 4 8 byte segments.
+    \item If every bit was available, there could be a total of 4,294,967,296
+      IP addresses.
+    \item The IP address of \verb+www.eonsahead.com+ is 45.40.136.115
+    \item \verb+www.eonsahead.com+'s hexadecimal address is 2D.28.88.73
+    \item \verb+www.eonsahead.com+'s binary address is 00101101.00101000.10001000.01110011
     \end{enumerate}
 
     \end{answer}
 
-  \item An IPv6 address contains 128 bits. With 128 bits, it
+  \item An IPv6 address contains $128$ bits. With $128$ bits, it
     is possible to represent $2^{128}$ addresses.
   \begin{enumerate}
     \item Look up the current population of the earth. What integer
@@ -230,9 +222,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item 33 $(2^33)$
-    \item 38 $(10^38)$
-    \item Approx. $2^95$, or 40 trillion quadrillion.
+    \item The current population of the earth is between $2^{32}$ and $2^{33}$ people.
+    \item $2^{128}$ is around three hundred and forty undecillion addresses.
+    \item Every person would be able to have a very large number of addresses,
+      approximately $47$ octillion apiece.
     \end{enumerate}
 
     \end{answer}
@@ -249,10 +242,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item These addresses are reserved for \textbf{realms}, aka a network whose IP address is only relevant to other hosts in the network.
-    \item $2^24$ (16.8 million).
-    \item $2^16$ (65 thousand).
-    \item 10.101.6.7
+    \item 10.0.0.0/8 and 192.168.0.0/16 are reserved for private networks.
+    \item There are 16,777,216 addresses in the 10.0.0.0/8 block.
+    \item There are 65,536 addresses in the 192.168.0.0/16 block.
+    \item The address of a computer in the lab is 10.101.6.3
     \end{enumerate}
 
     \end{answer}
@@ -262,9 +255,8 @@
     addressing when a programmer specifies a port number?
 
   \begin{answer}
-    A port number is a transport layer address reserved for the use of specific network applications. When specifying
-	a port number, a programmer must be sure to not use one of the 1024 well-known ports, and should pick something unused
-	(or at least relatively obscure).
+    A port number defines which network application a segment is being delivered to, as an 
+    added layer of specificity over the IP address.
     \end{answer}
 
   \item Here is an address: d4:9a:20:0a:49:00
@@ -278,14 +270,15 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item A MAC (Media Access Control) address. This is a link layer address.
-    \item MAC addresses identify all interfaces (hosts, routers, etc.) operating in a LAN.
-    \item 48 bits.
+    \item This address is formatted as a MAC address.
+    \item A MAC address is a link-layer address which uniquely identifies a link-layer 
+    	adapter.
+    \item 48 bits are needed for a 12 digit hexadecimal number.
     \end{enumerate}
 
     \end{answer}
 
-  \item What kinds of addresses do the headers in each of these kinds
+  \item What kinds of addresses to the headers in each of these kinds
       of packets contain? (Your choices are IP addresses, MAC addresses,
       and port numbers.)
   \begin{enumerate}
@@ -297,9 +290,9 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item Port numbers
-    \item IP addresses
-    \item MAC addresses
+    \item IP Address
+    \item Port Number
+    \item MAC Address
     \end{enumerate}
 
     \end{answer}
@@ -326,12 +319,17 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item DHCP will automatically assign either a permanent or temporary IP address to each host when it connects to the network. 
-	It also provides the host with local network information, including its subnet mask, the first-hop router address, and the DNS server address.
-    \item DHCP is useful in large networks where hosts may be constantly leaving and entering. In public WiFi networks, this ensures a user can enjoy a temporary
-	IP address, and in resedential networks, it allows the ISP to pool large userbases in smaller, dynamically controlled subnets.
-    \item DHCP uses UDP at port 67.
-    \item At this stage, the host does not yet have an assigned IP address. The only messages it is able to receive are broadcasts across the subnet.
+    \item DHCP assigns an IP address to a host and provides its subnet mask, the address 
+    	of the first router packets will visit upon leaving the host, and the address of 
+	the local DNS server.
+    \item DHCP is particularly useful for networks where users are constantly connecting and 
+    	disconnecting and do not need to keep the same IP address for an extended period 
+	of time.
+    \item DHCP discovery messages are sent by UDP to port 67.
+    \item The server broadcasts the offer message because it is possible for the request to 
+    	reach and be returned by multiple DHCP servers. Because a client is not guaranteed 
+	to choose that particular DHCP server, it waits to open the connection and send an 
+	ACK until after the offer message gets a response.
     \end{enumerate}
 
     \end{answer}
@@ -341,13 +339,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item NAT uses arbitrary port numbers to identify local hosts, rather than as process addresses. This can cause problems for servers
-	on the local network that may wait for data at specific, well known ports.
-    \item There may be security/privacy risks. NAT routers process data up to the transport layer, whereas other routers only need processing
-	up to the network layer.
-    \item As another security risk, NAT routers work specifically by acting as a middle man, modifying IP addresses and port numbers to
-	redirect traffic. 
-    \item NAT is an unnecessary patchwork solution to IP address shortage that would be rendered obsolete under IPv6 protocol.
+    \item Port numbers are meant to address processes, not hosts.
+    \item Routers are only supposed to process packets up to layer 3.
+    \item NAT violates the idea that hosts should talk directly to each other.
+    \item If we switched to IPv6, NAT would be unnecessary.
     \end{enumerate}
 
     \end{answer}
@@ -361,8 +356,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item Between hostnames and IP addresses.
-    \item Between MAC addresses and IP addresses.
+    \item DNS translates between IP addresses and hostnames.
+    \item ARP translates between IP addresses and MAC addresses.
     \end{enumerate}
 
     \end{answer}
@@ -378,8 +373,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item Link layer
-    \item Transport layer
+    \item Link Layer
+    \item Transport Layer
     \end{enumerate}
 
     \end{answer}
@@ -396,8 +391,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item Total path cost
-    \item Previous node in least cost path
+    \item The number denotes the cost of the least-cost path to reach the node
+    \item The label denotes the node which will be passed through directly 
+    	before reaching the destination node on the least-cost path from the 
+	source.
     \end{enumerate}
 
     \end{answer}
@@ -421,7 +418,7 @@
   \begin{answer}
 
   \begin{align*}
-    $d_x(y) = {\min}_v \{c(x,v) + d_v(y) \} $
+    \parbox{1cm}{$d_x(y)$} & = \parbox{4cm}{${\min}_v$\{$c(x,v)$ + $d_v(y)$\}}
     \end{align*}
 
     \end{answer}
@@ -440,7 +437,7 @@
     \item Iterative
     \item Asynchronous
     \item Distributed
-    \item Both? (Will put self in a quescient, waiting state, but not terminate)
+    \item Self-terminating
     \end{enumerate}
 
     \end{answer}
@@ -458,9 +455,12 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item The handling of reachability information between discrete autonomous systems.
-    \item Inter-AS routing
-    \item Intra-AS routing
+    \item Inter-AS routing provides each autonomous system with a means 
+	to obtain subnet reachability from neighboring ASs, distriubte 
+	that information to all routers within the AS, and determine 
+	"good" routes to subnets based on the information and policies.
+    \item Scalability is more important in inter-AS routing.
+    \item Performance is more important in intra-AS routing.
     \end{enumerate}
 
     \end{answer}
@@ -505,9 +505,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item By counting the bits in each row and column, and noting the tallies that are odd, the receiver
-	knows which rows and columns are missing bits (R3, C3, in this case).
-    \item By matching erroneous rows and columns, the receiver can simply invert the intersecting bit.
+    \item The receiver can know that there is an error.
+    \item The receiver can tell which bit the error is in and correct the error.
     \end{enumerate}
 
     \end{answer}
@@ -559,8 +558,8 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item When it is decreased
-    \item When it is increased
+    \item As $d_{prog}$ decreases, $E$ increases.
+    \item As $d_{tran}$ increases, $E$ increases.
     \end{enumerate}
 
     \end{answer}
@@ -650,9 +649,10 @@
   \begin{answer}
 
   \begin{enumerate}
-    \item There are no borrows in modulo-2 subtraction. All bits are converted to zeros except ORs $(1-0, 0-1)$.
-    \item 0100
-    \item Consecutive bit errors less than $r+1$.
+    \item The subtraction has no borrows or carrys, and uses XOR instead of traditional 
+	math operators.
+    \item WRITE YOUR ANSWER HERE
+    \item WRITE YOUR ANSWER HERE
     \end{enumerate}
 
     \end{answer}

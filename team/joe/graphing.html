@@ -20,7 +20,7 @@ function randomGraph(n, e, x, y) {
         for (i = 0; i < n; i++)
         {
             //Randomly generate n Nodes with random x and y coordinates
-            graph.nodes.push({ label: 'node '+i, x: Math.floor((Math.random() * x) + 1), y: Math.floor((Math.random() * y) + 1)});
+            graph.nodes.push({ label: i, x: Math.floor((Math.random() * x) + 1), y: Math.floor((Math.random() * y) + 1)});
             //create a a handful of edges. we will select a subset of theses later.
             for (j = i+1; j < n; j++)
             {
@@ -49,7 +49,6 @@ function randomGraph(n, e, x, y) {
         }
     return graph;
 }
-
 /**
 *  Creates Nodes for SVG circles
 *@param graph a graph
@@ -65,17 +64,14 @@ function makeNodeCircles(graph)
     }
     return nodeCir;
 }
-
 //creating our graph
 graph = randomGraph(10, 15, 600, 600);
 //creating our circles for svg
 nodeCircles = makeNodeCircles(graph);
-
 //using D3js we select the body, add an SVG element.
 var svgContainer = d3.select("body").append("svg")
                                     .attr("width", 625)
                                     .attr("height", 625);
-
 //First, we are going to draw our edges
 for(i = 0; i < graph.edges.length; i++)
 {
@@ -93,7 +89,6 @@ var circles = svgContainer.selectAll("circle")
                           .data(nodeCircles)
                           .enter()
                           .append("circle");
-
 //Last, we give our circles attributes
 var circleAttributes = circles
                       .attr("cx", function (d) { return d.x_axis; })
@@ -101,70 +96,53 @@ var circleAttributes = circles
                       .attr("r", function (d) { return d.radius; })
                       .style("fill", function(d) { return d.color; });
 
-
-
-//Not working ShortestPath Algorithm
-function shortestPath(graph, startVertex, endVertex)
+//Djkstra's Shortest Path Algorithm
+function djikstra(graph, startVertex) {
+var Q = [];
+var distance = [];
+var previous = [];
+//create a Vertex set Q
+for(node in graph.nodes)
 {
-  var Q = {},   dist = {},  prev= {};
+  //unknown distance from source to Node
+  distance.push(Number.POSITIVE_INFINITY);
+  //unknown pervious node in optimal path from source
+  previous.push(undefined);
+  //all nodes initially in Q (unvisited)
+  Q.push(node.label);
+}
 
-    /**
-    * For each vertex in V in Graph
-    *    dist[v] = INFINITY
-    *    prev[v] = UNDEFINED
-    *    add v to Q  -> unvisited nodes.
-    **/
-  for(v = 0; v < graph.nodes.length; v++)
-  {
-    dist[v] = Number.POSITIVE_INFINITY;
-    prev[v] = undefined;
-    Q[v] = graph.nodes[v]; 
-  }
+//distance from source to source
+distance[startVertex] = 0;
 
-  //Setting the is distance from source to source
-  dist[startVertex] = 0;
+while( Q.length != 0 )
+{
+  // U = source node with minimum distance
+  var u = minDist(graph, Q);
+  // Remove U in Q
+  Q.splice(u, 1);
 
-  //While Q is not empty
-  while( !isEmpty(Q) )
-  {
-    //First select the source node
-    //Finding the node with the minimal distance
-    var u = extractMin(Q, dist);
-    console.log(u);
-
-    //Now we want to remove U from Q
-    delete Q[u];
-
-    //for each neighbor v of u (where v is still in Q)
-    //we want to look for any edges that may contain this node
-    for(var edge in graph.edges)
-    {
-      if(u == graph.edges[edge].source)
-      {
-        var alt = dist[edge] + graph.edges[edge].len;
-
-        if(alt < dist[graph.edge[edge].target])
-        {
-          dist[graph.edge[edge].target] = alt;
-          prev[graph.edge[edge].target] = u;
-        }
-      }
-      if(u == graph.edges[edge].target)
-      {
-        var alt = dist[edge] + graph.edges[edge].len;
-
-        if(alt < dist[graph.edge[edge].source])
-        {
-          dist[graph.edge[edge].source] = alt;
-          prev[graph.edge[edge].source] = u;
-        }
-      }
-    }
-  }
-  return dist;
+}
 }
 
 
+function minDist(graph, Q)
+{
+  var minimumDist = Number.POSITIVE_INFINITY;
+  var minNode; 
+  for (node in Q)
+  {
+    for (i = 0; i < graph.edges.length; i++)
+    {
+      if( ((node == graph.edges[i].source) || (node == graph.edges[i].target)) && (graph.edges[node].len <= minimumDist) )
+      {
+        minimumDist = graph.edges[node].len;
+        minNode = node;
+      }
+    }
+  }
+  return minNode;
+}
 
 /**
  * Just a utility method to check if an Object is empty or not
@@ -175,28 +153,5 @@ function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
 
-
-/**
- * Returns the node with minimum distance from active vertex.
- * @param Q the array of vertexs
- * @param dist 
- * @returns nodeWithMinimumDistance  the node with the minimum distance
- */
-function extractMin(Q, dist) {
-    var minimumDistance = Infinity;
-    var nodeWithMinimumDistance;
-
-    for (i = 0; i < Q.length; i++)
-    {
-      //if the current node has a smaller distance than the current minimum distance
-      //make that the minimum distance
-      //Set the node as the nodeWithMinimumDistance
-        if (dist[node] <= minimumDistance) {
-            minimumDistance = dist[node];
-            nodeWithMinimumDistance = node;
-        }
-    }
-    return nodeWithMinimumDistance;
-}
 </script>
 </html>

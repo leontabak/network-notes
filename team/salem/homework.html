@@ -1042,6 +1042,39 @@ The scenario is that someone named Bob wants to get a webpage from Google.  But,
 
 
 <script>
+var process = true;
+var previous = null;
+function oc(id){
+if (process == false){
+	if(previous == null){
+			process = false;
+			$(document).ready(function(){
+			$("#" + id).fadeIn(2000);});
+			previous = id;
+			process = true;
+	} else if(previous == id){
+			process = false;
+			$(document).ready(function(){
+			$("#" + id).fadeOut(500);});
+			previous = null;
+			process = true;
+	} else {
+			process = false;
+			$(document).ready(function(){
+			$("#" + previous).fadeOut(1000);
+			setTimeout(function(){$("#" + id).fadeIn(1000);},1005);
+			});
+			previous = id;
+			process = true;
+	}
+}
+}
+
+
+
+
+
+/* another code
 var previous = null;
 function oc(id){
 	if(previous == null){
@@ -1068,13 +1101,7 @@ function oc(id){
 			$(document).ready(function(){
 			setTimeout(function(){$("button").fadeIn(500);previous = id;},2005)});
 	}
-}
-
-
-
-
-
-
+}*/
 
 		/*This is my old code:
 		
