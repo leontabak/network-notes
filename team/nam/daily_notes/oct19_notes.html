@@ -25,9 +25,13 @@
                      <li>algorithms with global state information are often referred to as <span class="display">link-state (LS) algorithms</span>, since the algorithm must be aware of the cost of each link in the network.</li>
                   </ul>
                </li>
-               <li></li>
-               <li></li>
-               <li></li>
+               <li>
+                  <span class="display">d<sub>x</sub>(y) = min<sub>v</sub>{c(x,v) + d<sub>v</sub>(y)}</span>
+               </li>
+               <li>after traveling from x to v, if we then take the least-cost path from v to y, the path cost will be c(x,v) + dv(y). Since we must begin by traveling to some neighbor v, the least cost from x to y is the minimum of c(x,v) + dv(y) taken over all neighbors v.</li>
+               <li>
+                  <img class="display" src="../img/DValgorithm.PNG"/>
+               </li>
             </ul>
          </div>
       </div>
