@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en" ng-app><head><title>Cam's Network Notes</title><meta charset="UTF-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script><script>hljs.initHighlightingOnLoad();</script><style>.center {
   text-align: center;
-}</style></head><body><div class="jumbotron"><div class="container"><h1>Cam's Network Notes</h1></div></div><div class="container"><div class="row"><div class="col-sm-8"><h1 class="center">Graded Exercises</h1><div class="row"><div class="col-xs-3"><button class="btn-primary btn btn-block" ng-click="post = 'week0'">Week0</button></div><div class="col-xs-3"><button class="btn-primary btn btn-block" ng-click="post = 'week1'">Week1</button></div><div class="col-xs-3"><button class="btn-primary btn btn-block" disabled>Week2</button></div><div class="col-xs-3"><button class="btn-primary btn btn-block" disabled>Week3</button></div></div></div><div class="col-sm-4"><h1 class="center">Notes</h1><h3>Chapter 3</h3><div class="row"><div class="col-xs-4"><button class="btn-primary btn btn-block" ng-click="post = '3.1'">3.1</button></div><div class="col-xs-4"><button class="btn-primary btn btn-block" ng-click="post = '3.2'">3.2</button></div><div class="col-xs-4"><button class="btn-primary btn btn-block" ng-click="post = '3.3'">3.3</button></div></div></div></div><div class="row"><div class="col-xs-12"><div class="post" ng-show="post == 'week0'"><h1>8 Review Questions</h1>
+}</style></head><body><div class="jumbotron"><div class="container"><h1>Cam's Network Notes</h1></div></div><div class="container"><div class="row"><div class="col-sm-8"><h1 class="center">Graded Exercises</h1><div class="row"><div class="col-xs-3"><button class="btn-primary btn btn-block" ng-click="post = 'week0'">Week0</button></div><div class="col-xs-3"><button class="btn-primary btn btn-block" ng-click="post = 'week1'">Week1</button></div><div class="col-xs-3"><button class="btn-primary btn btn-block" ng-click="post = 'week2'">Week2</button></div></div></div><div class="col-sm-4"><h1 class="center">Notes</h1><h3>Chapter 3</h3><div class="row"><div class="col-xs-4"><button class="btn-primary btn btn-block" ng-click="post = '3.1'">3.1</button></div><div class="col-xs-4"><button class="btn-primary btn btn-block" ng-click="post = '3.2'">3.2</button></div><div class="col-xs-4"><button class="btn-primary btn btn-block" ng-click="post = '3.3'">3.3</button></div></div></div></div><div class="row"><div class="col-xs-12"><div class="post" ng-show="post == 'week0'"><h1>8 Review Questions</h1>
 <ol>
 <li>
 <p>Which kind of switching is this unfunny joke about?</p>
@@ -326,6 +326,42 @@ still equals the same number. This could happen if the flipped bits occupy the
 same place in the words in two different words.</p>
 <h2>Wireshark Lab</h2>
 <p><a href="Wireshark-TCP.pdf">Wireshark-TCP.pdf</a></p>
+</div><div class="post" ng-show="post == 'week2'"><h1>Graded Exercise 2</h1>
+<h2>LinkedIn Profile</h2>
+<p>You can find my LinkedIn profile at
+<a href="https://www.linkedin.com/in/cameron-seebach-ab7a28111">https://www.linkedin.com/in/cameron-seebach-ab7a28111</a></p>
+<h2>Algorithm Lesson</h2>
+<p>I chose to look at Code Division Multiple Access (CDMA) instead of either the
+link-state or distance-vector algorithms.</p>
+<p>Code Division Multiple Access is a multiplexing method that lets multiple
+senders talk to one reciever over the same medium at the same time. This sounds
+like magic, but in the simplest case it's not too difficult to understand.</p>
+<p>We suppose that there is some bit-rate for a channel's data, and some faster rate
+that evenly multiplies that bit-rate. The faster rate is known as a 'chipping
+rate'.</p>
+<p>We suppose that each sender, instead of sending ones and zeros, sends -1 and +1
+instead.</p>
+<p>We also suppose that each sender has a unique code, made from -1s and +1s,
+with a length that matches the multiplier between the data rate and the chipping
+rate.</p>
+<p>We suppose that the channel, instead of having signals that override each other,
+add together. If there's only one sender, there can only be signals made up of
++1s and -1s. If there are two senders, values from -2 to +2 can be observed in
+the medium.</p>
+<p>When it is time to send, a sender looks at the bit it wants to send. If it is a
++1, it sends it's code at the chipping rate. If it is -1, it sends the code with
+the bits swapped, -1s becoming +1s, etc.</p>
+<p>The real magic is at the recieving end. The reciever looks through the list of
+senders and their attached codes, and tries each code against the values it
+sees in the channel. Essentially, by summing the values recieved for one bit,
+and multiplying by each part of the code, we either come up with a -1 or +1,
+which recovers the original bit. Magic, right?</p>
+<h2>Programming Assignment</h2>
+<p>For this assignment, I chose to implement an application-level protocol for a
+game based on the classic Pong. You can see my work at
+<a href="https://github.com/spirulence/crazy-pong">https://github.com/spirulence/crazy-pong</a>.</p>
+<p>Unfortunately, it isn't documented or tested well. I bit off more than I could
+chew given the number of hours I wanted to work on this project.</p>
 </div><div class="post" ng-show="post == '3.1'"><h1>Chapter 3 Section 1</h1>
 <h3>Important Terms:</h3>
 <p><strong>logical communication</strong> - communication as if two processes were directly connected</p>
